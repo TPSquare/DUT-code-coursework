@@ -1,0 +1,16 @@
+#include <math.h>
+#include <stdio.h>
+
+int main() {
+  double x, lt = 1, res = 0;
+  long long n = 1, gt = 1;
+  scanf("%lf", &x);
+  while (fabs(lt / gt) >= 1e-6) {
+    res += lt / gt;
+    lt *= x * x;
+    gt *= n * (n + 1);
+    n += 2;
+    }
+  printf("%.3lf", res);
+  return 0;
+}
